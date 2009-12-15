@@ -1,0 +1,25 @@
+{
+  "name": "JavaScript Console",
+  "version": "0.0.1",
+  "description": "Prototype JavaScript from within the browser for any webpage",
+  "icons" : {
+  	"16":"jsConsole.png",
+  	"32":"jsConsole.png",
+  	"48":"jsConsole.png",
+  	"128":"jsConsole.png"
+  },
+  "browser_action": {
+    "default_icon": "jsConsole.png",
+    "default_title": "JavaScript Console",
+    "popup": "popup.html"
+  },
+  "permissions": [
+      "tabs"
+  ],
+  "content_scripts":[
+  	{
+  		"matches":["http://*/*"],
+  		"js":["console.js"]
+  	}
+  ]
+}

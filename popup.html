@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+body{
+	overflow: hidden;
+	width: 200px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+<p>This is just here so you don't forget you have the extension installed & activated. <a id="deactivateLink" href="chrome://extensions/">Deactivate</a>.</p>
+
+<p><a id="hackLink" href="http://etherpad.com/javascriptconsole">Hack this extension!</a></p>
+<p>Check out my other extension:
+<br />
+<a id="extensionSite" href="http://www.statusbarcalculator.com">statusbarcalculator.com</a>
+</p>
+
+<script>
+document.getElementById("deactivateLink").addEventListener("click", gotoLink);
+document.getElementById("hackLink").addEventListener("click", gotoLink);
+document.getElementById("extensionSite").addEventListener("click", gotoLink);
+
+function gotoLink(event){
+  var href = event.currentTarget.href;
+  chrome.tabs.create({url: href});
+}
+</script>
+</body>
+</html>
