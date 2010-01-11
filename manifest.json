@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Console",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Prototype JavaScript from within the browser for any webpage",
   "icons" : {
   	"16":"jsConsole.png",

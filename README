@@ -1,0 +1,6 @@
+This extension dynamically inserts a textarea into the page. When you click "execute" it runs "eval" on anything
+in the textarea and executes the code as native JS. You can define a function, execute it, DELETE the function,
+and it remains in memory to be called.
+
+
+Many thanks to Radek Horsky for the patch!
