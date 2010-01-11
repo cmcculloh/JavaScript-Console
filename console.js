@@ -1,5 +1,36 @@
 var jsConsole = document.createElement('div');
 jsConsole.setAttribute('id', 'jsConsole');
 jsConsole.setAttribute('style', 'bottom:0px;right:0px;position:fixed; z-index: 99;');
-jsConsole.innerHTML = '<input type="button" value="show source" onClick="document.getElementById(\'bodyCode\').style.display=\'block\';" /><input type="button" value="hide source" onClick="document.getElementById(\'bodyCode\').style.display=\'none\';" /><input type="button" value="show console" onClick="document.getElementById(\'jsCode\').style.display=\'block\';" /><input type="button" value="hide console" onClick="document.getElementById(\'jsCode\').style.display=\'none\';" /><input type="button" value="execute JS" onClick="eval(document.getElementById(\'jsCode\').value);document.getElementById(\'bodyCode\').value=document.getElementsByTagName(\'body\')[0].innerHTML;" /><br /><textarea id="jsCode" rows="5" cols="60">function test(){\n\talert(\'test\');\n}\ntest();</textarea><textarea id="bodyCode" rows="15" cols="60" style="display:none;"></textarea>';
+var jsConsoleHTML = ['<input id="jsConsoleShowSourceButton" type="button" value="show source"',
+				'style="float:right;"',
+				'onClick="document.getElementById(\'bodyCode\').style.display=\'block\';',
+				'document.getElementById(\'jsConsoleShowSourceButton\').style.display=\'none\';',
+				'document.getElementById(\'jsConsoleHideSourceButton\').style.display=\'inline\';"',
+			'/>',
+			'<input id="jsConsoleHideSourceButton" type="button" value="hide source"',
+				'style="float:right;display:none;"',
+				'onClick="document.getElementById(\'bodyCode\').style.display=\'none\';',
+				'document.getElementById(\'jsConsoleHideSourceButton\').style.display=\'none\';',
+				'document.getElementById(\'jsConsoleShowSourceButton\').style.display=\'inline\';"',
+			'/>',
+			'<input id="jsConsoleShowConsoleButton" type="button" value="show console"',
+				'style="float:right;display:none;"',
+				'onClick="document.getElementById(\'jsCode\').style.display=\'block\';',
+				'document.getElementById(\'jsConsoleShowConsoleButton\').style.display=\'none\';',
+				'document.getElementById(\'jsConsoleHideConsoleButton\').style.display=\'inline\';"',
+			'/>',
+			'<input id="jsConsoleHideConsoleButton" type="button" value="hide console" ',
+				'style="float:right;"',
+				'onClick="document.getElementById(\'jsCode\').style.display=\'none\';',
+				'document.getElementById(\'jsConsoleHideConsoleButton\').style.display=\'none\';',
+				'document.getElementById(\'jsConsoleShowConsoleButton\').style.display=\'inline\';"',
+			'/>',
+			'<input type="button" value="execute JS" ',
+				'style="float:right;"',
+				'onClick="eval(document.getElementById(\'jsCode\').value);',
+				'document.getElementById(\'bodyCode\').value=document.getElementsByTagName(\'body\')[0].innerHTML;"',
+			'/><br />',
+			'<textarea id="jsCode" rows="5" cols="60" style="float:right;clear:right;"></textarea>',
+			'<textarea id="bodyCode" rows="15" cols="60" style="display:none;float:right;clear:right;"></textarea>'];
+jsConsole.innerHTML = jsConsoleHTML.join('');
 document.getElementsByTagName('body')[0].appendChild(jsConsole);
