@@ -1,3 +1,7 @@
+This extension is no longer under active development. Once I found out that you could just hit Shift + Enter to start a new line in Chrome's Native JavaScript console, the need for this extension vanished entirely.
+
+I'll leave it up for posterity sake, but I'm no longer interested in developing this project further. If, for some reason, someone else wants to take this over, the code is on GitHub. Shoot me a note (I won't be reading comments here, but leave a comment on the project page on my blog if you want) and I'll link to your version if you start developing a project based on this code base. I can't imagine why anyone would...
+
 This extension dynamically inserts a textarea into the page. When you click "execute" it runs "eval" on anything
 in the textarea and executes the code as native JS. You can define a function, execute it, DELETE the function,
 and it remains in memory to be called.
